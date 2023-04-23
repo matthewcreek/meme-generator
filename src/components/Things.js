@@ -15,12 +15,28 @@ function Things() {
         console.log(thingsArr);
     }
 
+    const [isImportant, setIsImportant] = React.useState('Yes')
+
+    function handleClick() {
+        if (isImportant === 'Yes') {
+            setIsImportant('No');
+        } else {
+            setIsImportant('Yes')
+        }
+        
+    }
+    
     return (
         <div>
             <button
                 onClick={addItem}
             >Add item</button>
             {arrElements}
+            <h1>is state important to know?</h1>
+            <h1>{isImportant}</h1>
+            <button
+                onClick={handleClick}
+            >Change State</button>
         </div>
     )
 }
