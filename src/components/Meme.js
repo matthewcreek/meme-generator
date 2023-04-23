@@ -2,12 +2,15 @@ import React from "react";
 import data from '../memeData';
 
 function Meme() {
+    const [memeImg, setMemeImg] = React.useState('');
 
     function getMemeImage(){
         const memeArr = data.data.memes;
         const randomMeme = memeArr[Math.floor(Math.random() * memeArr.length)];
         const url = randomMeme.url;
-        console.log(url);
+        // console.log(url);
+        setMemeImg(url)
+        console.log(memeImg)
     }
 
     return (
@@ -30,6 +33,7 @@ function Meme() {
                     Get a new meme image 🖼️
                 </button>
             </div>
+            <img src={memeImg} className="meme--img"/>
         </main>
         
     )
