@@ -11,8 +11,8 @@ function App() {
     <div>
       <Header />
       <Meme />
-      {/* <Things />
-      <StateExample /> */}
+      {/* <Things /> */}
+      {/* <StateExample /> */}
     </div>
   );
 }
