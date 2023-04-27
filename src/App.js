@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
 
-import Header from "./components/Header";
-import Meme from './components/Meme';
 import Count from './components/Count';
 
 function App() {
@@ -16,6 +14,8 @@ function App() {
         setCount(prevCount => prevCount - 1)
     }
 
+    console.log("App component rendered")
+
   return (
     <div>
       <div className="counter">
@@ -23,8 +23,6 @@ function App() {
         <Count number={count} />
         <button className="counter--plus" onClick={add}>+</button>
       </div>
-      {/* <Header /> */}
-      {/* <Meme /> */}
     </div>
   );
 }
