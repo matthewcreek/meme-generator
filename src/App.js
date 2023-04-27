@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 
-import ObjectState from './components/ObjectState';
+import Header from './components/Header';
+import Body from './components/Body';
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <ObjectState />
-    </div>
-  );
+      <main>
+          <Header />
+          <Body />
+      </main>
+  )
 }
-
-export default App;
