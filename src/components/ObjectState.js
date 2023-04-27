@@ -1,7 +1,7 @@
 import React from "react";
 
-import star from '../images/star.png'
-import empty from '../images/empty.png'
+import Star from '../components/Star.js'
+
 import user from '../images/katie-zaferes.png'
 
 export default function ObjectState() {
@@ -12,8 +12,6 @@ export default function ObjectState() {
         email: "itsmyrealname@example.com",
         isFavorite: false
     })
-
-    let starIcon = contact.isFavorite;
 
     function toggleFavorite() {
         setContact(prevContact => {
@@ -27,13 +25,9 @@ export default function ObjectState() {
     return (
         <div>
             <article className="card">
-                <img src={user} className="card--image" />
+                <img src={user} className="card--image" alt="user"/>
                 <div className="card--info">
-                    <img
-                        src={starIcon ? star : empty}
-                        className="card--favorite"
-                        onClick={toggleFavorite}
-                    />
+                    <Star isFilled={contact.isFavorite} handleClick={toggleFavorite} />
                     <h2 className="card--name">
                         {contact.firstName + " " + contact.lastName}
                     </h2>
