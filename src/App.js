@@ -5,10 +5,12 @@ import Header from './components/Header';
 import Body from './components/Body';
 
 export default function App() {
+  const [user, setUser] = React.useState("Joe")
+
   return (
       <main>
-          <Header />
-          <Body />
+          <Header user={user} />
+          <Body user={user} />
       </main>
   )
 }
