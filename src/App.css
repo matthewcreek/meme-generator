@@ -86,7 +86,7 @@ main {
 
 .top-text {
   position: absolute;
-  width: 94%;
+  width: 80%;
   top: 8px;
   left: 50%;
   transform: translate(-50%);
@@ -99,7 +99,7 @@ main {
 
 .bottom-text {
   position: absolute;
-  width: 94%;
+  width: 80%;
   bottom: .5rem;
   left: 50%;
   transform: translate(-50%);
