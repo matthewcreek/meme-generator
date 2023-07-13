@@ -1,13 +1,15 @@
 import React from "react";
 import data from '../memeData';
+import { useState } from "react";
 
 function Meme() {
-    const [meme, setMeme] = React.useState({
+    const [meme, setMeme] = useState({
         topText: '',
         bottomText: '',
         randomImage: 'http://i.imgflip.com/1bij.jpg'
     });
-    const [allMemeImages, setAllMemeImages] = React.useState(data)
+
+    const [allMemeImages, setAllMemeImages] = useState(data)
 
     function getMemeImage(){
         const memeArr = allMemeImages.data.memes;
@@ -21,6 +23,16 @@ function Meme() {
         })
     }
 
+    function handleChange(event) {
+        const { name, value } = event.target;
+        setMeme(prevMeme => {
+            return {
+                ...prevMeme,
+                [name] : value
+            }
+        })
+    }
+
     return (
         <main>
             <div className="form">
@@ -28,11 +40,17 @@ function Meme() {
                     type="text"
                     placeholder="Top Text"
                     className="form--input"
+                    name="topText"
+                    value={meme.topText}
+                    onChange={handleChange}
                 />
                 <input 
                     type="text"
                     placeholder="Bottom Text"
                     className="form--input"
+                    name="bottomText"
+                    value={meme.bottomText}
+                    onChange={handleChange}
                 />
                 <button 
                     className="form--button" 
@@ -41,7 +59,11 @@ function Meme() {
                     Get a new meme image 🖼️
                 </button>
             </div>
-            <img src={meme.randomImage} alt="meme" className="meme--img"/>
+            <div className="container">
+                <img src={meme.randomImage} alt="meme" className="meme--img"/>
+                <div className="top-text"><h1>{meme.topText}</h1></div>
+                <div className="bottom-text"><h1>{meme.bottomText}</h1></div>
+            </div>
         </main>
         
     )
