@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import data from '../memeData';
-import { useState } from "react";
 
 function Meme() {
     const [meme, setMeme] = useState({
@@ -10,6 +9,22 @@ function Meme() {
     });
 
     const [allMemeImages, setAllMemeImages] = useState(data)
+
+    const [starWarsData, setStarWarsData] = useState({})
+    const [count, setCount] = useState(0);
+
+    console.log('Component rendered')
+
+    //side effects
+    useEffect(function() {
+        console.log('Effect ran')
+    })
+    
+    // useEffect(function() {
+    //     fetch('https://swapi.dev/api/people/1')
+    //         .then(res => res.json())
+    //         // .then(data => setStarWarsData(data))
+    // })
 
     function getMemeImage(){
         const memeArr = allMemeImages.data.memes;
@@ -35,7 +50,7 @@ function Meme() {
 
     return (
         <main>
-            <div className="form">
+            {/* <div className="form">
                 <input 
                     type="text"
                     placeholder="Top Text"
@@ -63,6 +78,11 @@ function Meme() {
                 <img src={meme.randomImage} alt="meme" className="meme--img"/>
                 <div className="top-text"><h1>{meme.topText}</h1></div>
                 <div className="bottom-text"><h1>{meme.bottomText}</h1></div>
+            </div> */}
+            <div>
+                <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+                <h2>The count is {count}</h2>
+                <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
             </div>
         </main>
         
