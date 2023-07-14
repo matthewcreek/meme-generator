@@ -16,15 +16,16 @@ function Meme() {
     console.log('Component rendered')
 
     //side effects
-    useEffect(function() {
-        console.log('Effect ran')
-    })
-    
     // useEffect(function() {
-    //     fetch('https://swapi.dev/api/people/1')
+    //     console.log('Effect ran')
+    //     fetch('https://swapi.dev/api/people/' + count)
     //         .then(res => res.json())
-    //         // .then(data => setStarWarsData(data))
-    // })
+    //         .then(data => setStarWarsData(data))
+    // }, [count])
+
+    useEffect(() => {
+        console.log('effect ran')
+    }, [count])
 
     function getMemeImage(){
         const memeArr = allMemeImages.data.memes;
