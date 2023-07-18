@@ -11,7 +11,7 @@ function Meme() {
     const [allMemeImages, setAllMemeImages] = useState(data)
 
     const [starWarsData, setStarWarsData] = useState({})
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
 
     console.log('Component rendered')
 
