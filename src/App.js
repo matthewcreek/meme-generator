@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import WindowTracker from './components/WindowTracker';
+import Window from './components/Window';
 
 function App() {
   return (
-    <div className='container'>
-      <button>
-        Toggle WindowTracker
-      </button>
-      <WindowTracker />
+    <div>
+      <Window />
     </div>
   );
 }
