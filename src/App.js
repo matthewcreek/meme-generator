@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 
-import Header from "./components/Header";
-import Meme from './components/Meme';
+import WindowTracker from './components/WindowTracker';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Meme />
+    <div className='container'>
+      <button>
+        Toggle WindowTracker
+      </button>
+      <WindowTracker />
     </div>
   );
 }
